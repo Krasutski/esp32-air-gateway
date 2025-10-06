@@ -1,0 +1,29 @@
+#pragma once
+
+/* ESP32 Pinout */
+#define BSP_PIN_SPI_SD_MISO    2
+#define BSP_PIN_MODEM_PWR_KEY  4
+#define BSP_PIN_BLUE_LED       12
+#define BSP_PIN_SPI_SD_CS      13
+#define BSP_PIN_SPI_SD_SCK     14
+#define BSP_PIN_SPI_SD_MOSI    15
+#define BSP_PIN_USER_I2C_SDA   21
+#define BSP_PIN_USER_I2C_SCL   22
+#define BSP_PIN_USER_SPI_MISO  22
+#define BSP_PIN_MODEM_FLIGHT   25
+#define BSP_PIN_MODEM_UART_RXD 26
+#define BSP_PIN_MODEM_UART_TXD 27
+#define BSP_PIN_MODEM_DTR      32
+#define BSP_PIN_MODEM_RING     33
+#define BSP_PIN_MODEM_STATUS   34
+#define BSP_PIN_ADC_BAT        35
+#define BSP_PIN_ADC_SOLAR      36
+
+#define BSP_PIN_MODEM_UART_RTS -1
+#define BSP_PIN_MODEM_UART_CTS -1
+
+/* ADC Channels */
+#define ADC_CHANNEL_BAT         ADC_CHANNEL_7  // GPIO35 if ADC1
+#define ADC_CHANNEL_SOLAR       ADC_CHANNEL_0  // GPIO36 if ADC1
+#define ADC_BAT_DIVIDER_RATIO   2
+#define ADC_SOLAR_DIVIDER_RATIO 2

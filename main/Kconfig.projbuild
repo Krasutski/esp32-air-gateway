@@ -1,0 +1,27 @@
+menu "Air Gateway AP Configuration"
+
+    config AIR_GATEWAY_AP_WIFI_SSID
+        string "Set AP WiFi SSID"
+        default "air-gateway"
+        help
+            Set the SSID for the WiFi access point
+
+    config AIR_GATEWAY_AP_WIFI_PASS
+        string "Set AP WiFi Password"
+        default "air1234567890"
+        help
+            Set the password for the WiFi access point
+
+    config AIR_GATEWAY_AP_WIFI_CHANNEL
+        int "Set AP WiFi Channel"
+        default 1
+        help
+            Set the channel for the WiFi access point
+
+    config AIR_GATEWAY_AP_MAX_STA_CONN
+        int "Set Max STA Connections"
+        default 4
+        help
+            Set the maximum number of station connections
+
+endmenu

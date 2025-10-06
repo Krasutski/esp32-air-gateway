@@ -1,0 +1,117 @@
+{
+  "C_Cpp": {
+    "default": {
+      "configurationProvider": "ms-vscode.cmake-tools"
+    },
+    "autoAddFileAssociations": false,
+    "intelliSenseEngine": "default"
+  },
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "clang-tidy": {
+    "executable": "/usr/bin/clang-tidy",
+    "compilerArgs": [
+      "-DBUILD_A140_CONF=1",
+      "-include ${workspaceFolder}/src/inc/build_conf.h"
+    ],
+    "lintOnSave": true
+  },
+  "cmake": {
+    "generator": "Ninja",
+    "sourceDirectory": "${workspaceFolder}/",
+    "configureOnOpen": true,
+    "clearOutputBeforeBuild": true,
+    "saveBeforeBuild": true,
+    "configureArgs": [
+      "-DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF",
+      "--fresh",
+      "-DTOOLCHAIN_PREFIX=${env:GCC_PATH}"
+    ]
+  },
+  "cortex-debug.armToolchainPath": "${env:GCC_PATH}/bin/",
+  "editor": {
+    "formatOnSave": true,
+    "formatOnType": true,
+    "tabCompletion": "off",
+    "tabSize": 4,
+    "renderWhitespace": "all"
+  },
+  "files": {
+    "insertFinalNewline": true,
+    "trimTrailingWhitespace": true,
+    "autoSave": "onFocusChange",
+    "associations": {
+      "*.h": "c",
+      "*.c": "c"
+    }
+  },
+  "sonarlint": {
+    "connectedMode.project": {
+      "connectionId": "",
+      "projectKey": ""
+    },
+    "rules": {
+      "c:S1066": {
+        "level": "off"
+      },
+      "c:S134": {
+        "level": "off"
+      },
+      "c:S909": {
+        "level": "off",
+        "message": "Remove this continue statement."
+      }
+    }
+  },
+  "search": {
+    "exclude": {
+      "test_path": true,
+      "tests": true
+    }
+  },
+  "git": {
+    "autofetch": true,
+    "rebaseWhenSync": true,
+    "allowForcePush": true,
+    "ignoreRebaseWarning": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/compile_commands.json",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "remote.autoForwardPortsFallback": 0,
+  "idf.espIdfPath": "/opt/esp/idf",
+  "idf.pythonInstallPath": "/usr/bin/python3",
+  "idf.openOcdConfigs": [
+    ""
+  ],
+  "idf.port": "/dev/ttyACM0",
+  "idf.flashType": "UART",
+  "idf.toolsPath": "/opt/esp",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32"
+  },
+  "cSpell.words": [
+    "atten",
+    "bldr",
+    "commitizen",
+    "digi",
+    "flowctrl",
+    "gatts",
+    "iram",
+    "logi",
+    "logw",
+    "loko",
+    "mbedtls",
+    "rfcfg",
+    "rssi",
+    "rxlrpkt",
+    "sclk",
+    "srcs",
+    "svcs",
+    "unsup",
+    "vbat"
+  ]
+}

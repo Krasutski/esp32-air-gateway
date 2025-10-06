@@ -1,0 +1,42 @@
+{
+    "name": "ESP-IDF QEMU",
+    // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "idf.espIdfPath": "/opt/esp/idf",
+                "idf.toolsPath": "/opt/esp",
+                "idf.gitPath": "/usr/bin/git"
+            },
+            "extensions": [
+                "espressif.esp-idf-extension",
+                "espressif.esp-idf-web",
+                "christian-kohler.path-intellisense",
+                "eamodio.gitlens",
+                "jannisx11.batch-rename-extension",
+                "lextudio.restructuredtext",
+                "mhutchie.git-graph",
+                "ms-python.python",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools",
+                "nordic-semiconductor.nrf-kconfig",
+                "notskm.clang-tidy",
+                "SonarSource.sonarlint-vscode",
+                "streetsidesoftware.code-spell-checker",
+                "trond-snekvik.simple-rst",
+                "yzhang.markdown-all-in-one",
+                "ms-python.autopep8"
+            ]
+        }
+    },
+    "runArgs": [
+        "--privileged"
+    ],
+    "mounts": [
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/tmp/.hostssh,type=bind,consistency=cached"
+        //"source=/dev/bus/usb,target=/dev/bus/usb,type=bind"
+    ],
+    "postCreateCommand": "mkdir -p ~/.ssh && cp -r /tmp/.hostssh/* ~/.ssh && chmod 700 ~/.ssh && chmod 600 ~/.ssh/*"
+}
