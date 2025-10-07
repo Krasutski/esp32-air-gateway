@@ -1,6 +1,7 @@
 idf_component_register (
     SRCS
         bsp_battery.c
+        bsp_led.c
         bsp_modem.c
     INCLUDE_DIRS
         include

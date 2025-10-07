@@ -16,6 +16,7 @@
 #include "nvs_flash.h"
 
 #include "bsp_battery.h"
+#include "bsp_led.h"
 #include "bsp_modem.h"
 
 static const char *TAG = "air_gateway.c";
@@ -101,6 +102,9 @@ void app_main(void) {
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
+
+    bsp_led_init();
+    bsp_battery_init();
 
     bsp_modem_power_up_por();
 
